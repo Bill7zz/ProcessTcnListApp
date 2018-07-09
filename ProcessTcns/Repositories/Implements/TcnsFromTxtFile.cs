@@ -11,23 +11,31 @@ namespace ProcessTcns
         {
             Path = path;
         }
-        //// TODO: add Using for handle StreamReader
+        //// TODO: add try catch to handle exepction on file reader
         public List<TcnDto> GetList()
         {
             var line = string.Empty;
             var tcnList = new List<TcnDto>();
-            using (var file = new System.IO.StreamReader(Path))
+            try
             {
-                while ((line = file.ReadLine()) != null)
+                using (var file = new System.IO.StreamReader(Path))
                 {
-                    var tcnDto = ProcessLine(line);
-                    if (tcnDto == null)
-                        continue;
+                    while ((line = file.ReadLine()) != null)
+                    {
+                        var tcnDto = ProcessLine(line);
+                        if (tcnDto == null)
+                            continue;
 
-                    tcnList.Add(tcnDto);
+                        tcnList.Add(tcnDto);
+                    }
+                    return tcnList;
                 }
-                return tcnList;
             }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);              
+            }
+            return tcnList;
         }
         private TcnDto ProcessLine(string line)
         {
