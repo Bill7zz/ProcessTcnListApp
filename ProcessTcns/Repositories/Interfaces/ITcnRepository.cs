@@ -4,6 +4,6 @@ namespace ProcessTcns
 {
     interface ITcnRepository
     {
-        List<TcnDto> GetList();
+        List<TcnDto> GenerateList();
     }
 }

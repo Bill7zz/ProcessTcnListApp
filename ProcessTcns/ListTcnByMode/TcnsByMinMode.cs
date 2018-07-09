@@ -6,7 +6,7 @@ namespace ProcessTcns.ListTcnByMode
 {
     public class TcnsByMinMode : AbstrabTcnsByMode
     {       
-        public override List<TcnDto> GetList(List<TcnDto> baseTcnList)
+        public override List<TcnDto> ProcessList(List<TcnDto> baseTcnList)
         {
             var MinTcnList = new List<TcnDto>();
 

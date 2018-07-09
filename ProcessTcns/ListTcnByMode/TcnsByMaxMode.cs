@@ -5,7 +5,7 @@ namespace ProcessTcns.ListTcnByMode
 {
     public class TcnsByMaxMode : AbstrabTcnsByMode
     {              
-        public override List<TcnDto> GetList(List<TcnDto> baseTcnList)
+        public override List<TcnDto> ProcessList(List<TcnDto> baseTcnList)
         {            
             var MaxTcnList = new List<TcnDto>();
             

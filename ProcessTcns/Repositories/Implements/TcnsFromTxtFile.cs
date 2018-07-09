@@ -12,7 +12,7 @@ namespace ProcessTcns
             Path = path;
         }
         //// TODO: add try catch to handle exepction on file reader
-        public List<TcnDto> GetList()
+        public List<TcnDto> GenerateList()
         {
             var line = string.Empty;
             var tcnList = new List<TcnDto>();

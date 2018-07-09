@@ -18,7 +18,7 @@ namespace ProcessTcn.Text.Tcns.Test
             testTcn.Id = 4001;
             testTcn.Tcn = 134120065003400;
             var tcnsFromTxtFile = new TcnsFromTxtFile(path);
-            var tcnList = new List<TcnDto>(tcnsFromTxtFile.GetList());
+            var tcnList = new List<TcnDto>(tcnsFromTxtFile.GenerateList());
             Assert.IsTrue(tcnList.Exists(t => t.Id == testTcn.Id));            
         }
     }

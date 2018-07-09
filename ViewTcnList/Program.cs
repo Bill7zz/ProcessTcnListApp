@@ -17,15 +17,15 @@ namespace ViewTcnList
 
             var path = ChooseFile();
             var tcnsFromTxtFile = new TcnsFromTxtFile(path);
-            var baseTcnList = new List<TcnDto>(tcnsFromTxtFile.GetList());
+            var list = new List<TcnDto>(tcnsFromTxtFile.GenerateList());
 
             var tcnsByMaxMode = new TcnsByMaxMode();
             var tcnsByMinMode = new TcnsByMinMode();
 
-            var MaxTcnList = new List<TcnDto>(tcnsByMaxMode.GetList(baseTcnList));
-            var MinTcnList = new List<TcnDto>(tcnsByMinMode.GetList(baseTcnList));
+            var MaxTcnList = new List<TcnDto>(tcnsByMaxMode.ProcessList(list));
+            var MinTcnList = new List<TcnDto>(tcnsByMinMode.ProcessList(list));
         
-            ShowList(baseTcnList, "***Original List ****\n");
+            ShowList(list, "***Original List ****\n");
             ShowList(MaxTcnList, "\n***List of tcn with max value****\n");
             ShowList(MinTcnList, "\n***List of tcn with min value****\n");
 

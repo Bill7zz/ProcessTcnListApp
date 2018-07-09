@@ -18,10 +18,10 @@ namespace ProcessTcnsTest.ListTcnByMode.test
         public void IsFalseIfMaxTcnDosentExistInMinTcnList()
         {                        
             var tcnsFromTxtFile = new TcnsFromTxtFile(path);
-            var BaseTcnList = new List<TcnDto>(tcnsFromTxtFile.GetList());
+            var BaseTcnList = new List<TcnDto>(tcnsFromTxtFile.GenerateList());
             
             var tcnsByMinMode = new TcnsByMinMode();            
-            var MinTcnList = new List<TcnDto>(tcnsByMinMode.GetList(BaseTcnList));
+            var MinTcnList = new List<TcnDto>(tcnsByMinMode.ProcessList(BaseTcnList));
 
             var result = MinTcnList.Contains(BaseTcnList[5]);
             Console.WriteLine();
