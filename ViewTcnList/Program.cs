@@ -1,37 +1,47 @@
-using System;
-using System.Collections.Generic;
 using ProcessTcns;
 using ProcessTcns.ListTcnByMode;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ViewTcnList
 {
     class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main(string[] args)//// TODO: Create a full Windows Form for UX
         {
-            var path = @"C:\TCNs.txt";
+            Console.WriteLine("*** Welconme to TCN List APP ***");
+            Console.WriteLine("Press Enter to choose a file to process");
+            Console.ReadKey();
+
+            var path = ChooseFile();
             var tcnsFromTxtFile = new TcnsFromTxtFile(path);
             var baseTcnList = new List<TcnDto>(tcnsFromTxtFile.GetList());
-
-            Console.WriteLine("***Original List ****\n");
-            foreach (var t in baseTcnList)
-                Console.WriteLine($"{t.Id} {t.Tcn}");
 
             var tcnsByMaxMode = new TcnsByMaxMode();
             var tcnsByMinMode = new TcnsByMinMode();
 
             var MaxTcnList = new List<TcnDto>(tcnsByMaxMode.GetList(baseTcnList));
             var MinTcnList = new List<TcnDto>(tcnsByMinMode.GetList(baseTcnList));
-
-            Console.WriteLine("\n***List of tcn with max value****\n");
-            foreach (var t in MaxTcnList)
-                Console.WriteLine($"{t.Id} {t.Tcn}");
-
-            Console.WriteLine("\n***List of tcn with min value****\n");
-            foreach (var t in MinTcnList)
-                Console.WriteLine($"{t.Id} {t.Tcn}");
+        
+            ShowList(baseTcnList, "***Original List ****\n");
+            ShowList(MaxTcnList, "\n***List of tcn with max value****\n");
+            ShowList(MinTcnList, "\n***List of tcn with min value****\n");
 
             Console.ReadKey();
+        }
+        private static void ShowList(List<TcnDto> list, string message)
+        {        
+            Console.WriteLine(message);
+            foreach (var t in list)
+                Console.WriteLine($"{t.Id} {t.Tcn}");
+        }
+        private static string ChooseFile()
+        {
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.ShowDialog();
+                return openFile.FileName;        
         }
     }
 }
