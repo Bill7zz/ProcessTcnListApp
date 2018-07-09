@@ -30,10 +30,12 @@ namespace ProcessTcns
                     }
                     return tcnList;
                 }
-            }
+            }            
             catch (ArgumentException ex)
             {
-                Console.WriteLine(ex.Message);              
+                Console.WriteLine(ex.Message);
+                Console.ReadKey();
+                Environment.Exit(3);
             }
             return tcnList;
         }
