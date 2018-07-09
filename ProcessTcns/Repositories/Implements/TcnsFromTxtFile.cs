@@ -33,8 +33,7 @@ namespace ProcessTcns
             }            
             catch (ArgumentException ex)
             {
-                Console.WriteLine(ex.Message);
-                Console.ReadKey();
+                Console.WriteLine($"\nDisculpe, necesita elegir un archivo para continuar con la ejecucion\n{ ex.Message}");
                 Environment.Exit(3);
             }
             return tcnList;
