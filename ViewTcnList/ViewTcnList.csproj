@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProcessTcns\ProcessTcns.csproj">
+      <Project>{ac311627-ad7b-40f7-b36f-58d2d7dd723e}</Project>
+      <Name>ProcessTcns</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

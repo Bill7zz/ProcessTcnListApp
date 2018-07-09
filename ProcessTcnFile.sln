@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessTcns", "ProcessTcns\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessTcnsTest", "ProcessTcnsTest\ProcessTcnsTest.csproj", "{F39D7C6E-A073-45C5-AE4E-78856F4CE451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowTcnList", "ShowTcnList\ShowTcnList.csproj", "{82315261-A7AB-4C83-BD7E-E48C01537AF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewTcnList", "ViewTcnList\ViewTcnList.csproj", "{0BD0655E-F2E2-45DD-9EC9-A77C442C5C7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F39D7C6E-A073-45C5-AE4E-78856F4CE451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F39D7C6E-A073-45C5-AE4E-78856F4CE451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F39D7C6E-A073-45C5-AE4E-78856F4CE451}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82315261-A7AB-4C83-BD7E-E48C01537AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82315261-A7AB-4C83-BD7E-E48C01537AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82315261-A7AB-4C83-BD7E-E48C01537AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82315261-A7AB-4C83-BD7E-E48C01537AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BD0655E-F2E2-45DD-9EC9-A77C442C5C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD0655E-F2E2-45DD-9EC9-A77C442C5C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD0655E-F2E2-45DD-9EC9-A77C442C5C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD0655E-F2E2-45DD-9EC9-A77C442C5C7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
